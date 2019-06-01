@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 def generador_senoidal (fs, f0, N, a0=1, p0=0):
     """ 
-    
     brief:  Generador de señales senoidal, con argumentos
     
     fs:     frecuencia de muestreo de la señal [Hz]
@@ -47,7 +46,6 @@ plt.subplot(311)
 plt.plot(t, s, label="Sin")
 plt.xlim(0, 1)
 plt.ylabel('amplitud [V]')
-plt.xlabel('tiempo [segundos]')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(0., 0.3, 1., .102), loc=1, ncol=1)
 
@@ -55,7 +53,6 @@ plt.subplot(312)
 plt.plot(t, n, 'c', label="Noise")
 plt.xlim(0, 1)
 plt.ylabel('amplitud [V]')
-plt.xlabel('tiempo [segundos]')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(0., 0.3, 1., .102), loc=1, ncol=1)
 
