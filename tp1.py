@@ -90,7 +90,7 @@ f2 = fs/2    # Hz
 
 plt.subplot(413)
 plt.plot(t, s2, label="Sin 2")
-plt.xlim(0, 1)
+plt.xlim(0, 0.1)
 plt.ylabel('amplitud [V]')
 plt.xlabel('tiempo [segundos]')
 plt.grid(True)
