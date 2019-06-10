@@ -61,6 +61,7 @@ plt.legend(bbox_to_anchor=(0., 1.22, 1., .102), loc=1, ncol=1)
 a1 = 1 # Volts
 p1 = 0 # radianes
 f1 = fs/2   # Hz
+# f1 = 400   # Hz
 
 # Insertar aquí el código para generar y visualizar la señal
 ##############################################################
