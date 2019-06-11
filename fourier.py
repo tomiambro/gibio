@@ -25,14 +25,18 @@ ff = np.linspace(-N/2, (N/2)*df, N).flatten()
 [_, s2] = generador_senoidal(fs, fo + fd[2], N)
 [_, s3] = generador_senoidal(fs, fo + fd[3], N)
 
-S0 = np.fft.fft(s0)/N
-S1 = np.fft.fft(s1)/N
-S2 = np.fft.fft(s2)/N
-S3 = np.fft.fft(s3)/N
+S0 = np.fft.fft(s0)
+S1 = np.fft.fft(s1)
+S2 = np.fft.fft(s2)
+S3 = np.fft.fft(s3)
 M0 = (fo + fd[0]) * N / fs
 M1 = (fo + fd[1]) * N / fs
 M2 = (fo + fd[2]) * N / fs
 M3 = (fo + fd[3]) * N / fs
+print(M0)
+print(M1)
+print(M2)
+print(M3)
 
 
 
@@ -47,18 +51,18 @@ tus_resultados = [ ['$ \lvert X(f_0) \lvert$', '$ \lvert X(f_0+1) \lvert $', '$\
 
 tus_resultados[2][0] = np.abs(S0[int(M0)])
 tus_resultados[3][0] = np.abs(S1[int(M1)])
-tus_resultados[4][0] = np.abs(S1[int(M1)])
-tus_resultados[5][0] = np.abs(S1[int(M1)])
+tus_resultados[4][0] = np.abs(S2[int(M1)])
+tus_resultados[5][0] = np.abs(S3[int(M1)])
 
 tus_resultados[2][1] = np.abs(S0[int(M0 + 1)])
 tus_resultados[3][1] = np.abs(S1[int(M1 + 1)])
-tus_resultados[4][1] = np.abs(S1[int(M1 + 1)])
-tus_resultados[5][1] = np.abs(S1[int(M1 + 1)])
+tus_resultados[4][1] = np.abs(S2[int(M1 + 1)])
+tus_resultados[5][1] = np.abs(S3[int(M1 + 1)])
 for x in ff:
   tus_resultados[2][2] = np.power(np.abs(S0[int(x)]), 2)
   tus_resultados[3][2] = np.power(np.abs(S1[int(x)]), 2)
-  tus_resultados[4][2] = np.power(np.abs(S1[int(x)]), 2)
-  tus_resultados[5][2] = np.power(np.abs(S1[int(x)]), 2)
+  tus_resultados[4][2] = np.power(np.abs(S2[int(x)]), 2)
+  tus_resultados[5][2] = np.power(np.abs(S3[int(x)]), 2)
 
 
 df = DataFrame(tus_resultados, columns=['Frecuencia central', 'Primer adyacente', 'Resto de frecuencias'],
