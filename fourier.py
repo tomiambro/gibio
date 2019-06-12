@@ -39,7 +39,6 @@ print(M2)
 print(M3)
 
 
-
 tus_resultados = [ ['$ \lvert X(f_0) \lvert$', '$ \lvert X(f_0+1) \lvert $', '$\sum_{i=F} \lvert X(f_i) \lvert ^2 $'], 
                    ['',                        '',                           '$F:f \neq f_0$'], 
                   ['', '', ''], # <-- acá debería haber numeritos :)
