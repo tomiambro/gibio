@@ -37,11 +37,14 @@ N = sup - inf
 
 
 f_w, psd_w = sig.welch(ecg_one_lead[inf:sup], fs=fs, nperseg=N/8, axis=0)
+print(np.max(ecg_one_lead))
+
+psd_w /= np.max(ecg_one_lead)
 
 # psd_bt = CORRELOGRAMPSD(ecg_one_lead[inf:sup].flatten(), lag=int(N/8))
 
 area = np.trapz(psd_w, axis=0)
-interes = area * 0.99
+interes = area * 0.95
 
 
 f_i = np.array((f_w >= 0.66).nonzero()).flatten()
@@ -61,7 +64,7 @@ plt.show()
 
 plt.figure(2)
 plt.xlabel('Frecuencia')
-plt.plot(f_w, psd_w)
+plt.semilogx(f_w, psd_w)
 plt.grid(which='both', axis='both')
 plt.show()
 
